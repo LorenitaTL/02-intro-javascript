@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//import {heroes} from './data/heroes'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//const { heroes } = require("./data/heroes");
+//import { heroes } from "./data/heroes";
+import {heroes, owners}  from "./data/heroes";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+console.log(owners)
+
+//find
+const getHeroesById = (id)=> heroes.find((heroe)=> heroe.id===id);
+
+console.log(getHeroesById(3))
+
+//filter
+const getHeroesByOwner = (owner)=> heroes.filter((heroe)=> heroe.owner===owner);
+
+console.log(getHeroesByOwner('DC'))
